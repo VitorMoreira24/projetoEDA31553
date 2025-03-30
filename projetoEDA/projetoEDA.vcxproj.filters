@@ -23,9 +23,6 @@
     <ClCompile Include="antenas.c">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="main.c">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="antenas.txt">

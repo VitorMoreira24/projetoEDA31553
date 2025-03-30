@@ -131,7 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="antenas.c" />
-    <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="antenas.txt" />
