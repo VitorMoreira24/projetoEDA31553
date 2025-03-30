@@ -12,7 +12,7 @@ Laboratórios de Informática
 
 [projetoEDA/](./projetoEDA/)  Código da solução desenvolvida 
 
-[/doxdoc/](./doxdoc/)  documentação gerado pela ferramenta Doxygen
+[doc/](.doc/)  documentação gerado pela ferramenta Doxygen
 
 ## Download do Projeto
 
