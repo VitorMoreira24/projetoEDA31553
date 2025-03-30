@@ -14,7 +14,7 @@
  /*****************************************************************//**
   * \brief Struct que representa uma antena
   *
-  * \param frequencia - Frequência da antena ex: 'A', 'B' , '.'
+  * \param frequencia - Frequência da antena ex: 'A', 'B' , '.' , etc
   * \param linha - Linha da matriz
   * \param coluna - Coluna da matriz
   * \param prox - Aponta para a próxima antena
