@@ -16,7 +16,7 @@ Laboratórios de Informática
 
 ## Download do Projeto
 
-Aceder a partir do repositório GITHUB à pasta "Entrega" e realizar o download do ficheiro "projetoEDA31553.zip"
+Aceder a partir do repositório GITHUB à pasta e realizar o download do ficheiro "projetoEDA31553.zip"
 
 ## Compilação do Programa
 
