@@ -1,0 +1,26 @@
+\doxysection{antenas.\+h}
+\hypertarget{antenas_8h_source}{}\label{antenas_8h_source}\index{/home/vitor/SecretÃ¡ria/projetoEDA/projetoEDA/projetoEDA/antenas.h@{/home/vitor/SecretÃ¡ria/projetoEDA/projetoEDA/projetoEDA/antenas.h}}
+\mbox{\hyperlink{antenas_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <malloc.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ /*****************************************************************/}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAntena}{Antena}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{char}\ frequencia;\ \ \ \ \ \ \ \textcolor{comment}{//\ Ex:\ 'A',\ 'B'}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ linha,\ coluna;\ \ \ \ \ \textcolor{comment}{//\ Posição\ na\ matriz}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAntena}{Antena}}*\ prox;\ \ \ \textcolor{comment}{//\ Próxima\ antena}}
+\DoxyCodeLine{00027\ \}\ \mbox{\hyperlink{structAntena}{Antena}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Protótipos\ das\ funções\ no\ ficheiro\ antenas.c}}
+\DoxyCodeLine{00030\ \mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{antenas_8h_a0cddd59c73ccb91cdbfaf548746e0d9e}{CriaAntena}}(\textcolor{keywordtype}{char}\ frequencia,\ \textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna);}
+\DoxyCodeLine{00031\ \mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{antenas_8h_ab70e160312f785d6abf44842e8407baf}{InsereOrdenado}}(\mbox{\hyperlink{structAntena}{Antena}}*\ inicio,\ \mbox{\hyperlink{structAntena}{Antena}}*\ novo);}
+\DoxyCodeLine{00032\ \mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{antenas_8h_ace77b16071a28e33fdd24e89a7d5849a}{RemoveAntena}}(\mbox{\hyperlink{structAntena}{Antena}}*\ inicio,\ \textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna);}
+\DoxyCodeLine{00033\ \mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{antenas_8h_af41a907dbb5cddf621921caf2c478b34}{ProcuraAntena}}(\mbox{\hyperlink{structAntena}{Antena}}*\ inicio,\ \textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna);}
+\DoxyCodeLine{00034\ \textcolor{comment}{//void\ DestroiListaAntenas(Antena**\ h);}}
+
+\end{DoxyCode}
