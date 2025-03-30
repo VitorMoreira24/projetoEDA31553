@@ -1,5 +1,5 @@
 /*****************************************************************//**
- * \file   main.cccc
+ * \file   main.cccccc
  * \brief  Ficheiro Main do programa AINDA EM DESENVOLVIMENTO/INCORRETO
  *
  * \author Vitor Moreira 31553
