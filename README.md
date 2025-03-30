@@ -10,9 +10,9 @@ Laboratórios de Informática
 
 ## Organização
 
-[projetoEDA31553/projetoEDA31553](./projetoEDA31553/projetoEDA)  Código da solução desenvolvida 
+[projetoEDA/](./projetoEDA/)  Código da solução desenvolvida 
 
-[projetoEDA/doxdoc/](.projetoEDA31553/doxdoc/)  documentação gerado pela ferramenta Doxygen
+[/doxdoc/](./doxdoc/)  documentação gerado pela ferramenta Doxygen
 
 ## Download do Projeto
 
