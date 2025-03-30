@@ -1,7 +1,22 @@
+/*****************************************************************//**
+ * \file   antenas.c
+ * \brief  Ficheiro com todas as funções relacionadas com as antenas
+ * 
+ * \author Vitor Moreira 31553
+ * \date   30 de Março 2025
+ *********************************************************************/
 #include "antenas.h"
 
 #pragma region Criar Antena
-
+ /*****************************************************************//**
+  * \brief Função que cria uma antena
+  *
+  * \param freq - Frequência da antena
+  * \param linha - Linha da matriz
+  * \param coluna - Coluna da matriz
+  *
+  * \return Retorna a antena criada
+  *********************************************************************/
 Antena* CriaAntena(char freq, int linha, int coluna) {
 	Antena* aux = (Antena*)malloc(sizeof(Antena));
 	if (aux != NULL) {
@@ -12,10 +27,17 @@ Antena* CriaAntena(char freq, int linha, int coluna) {
 	}
 	return aux;
 }
-
 #pragma endregion 
-#pragma region Insere Ordenado
 
+#pragma region Insere Ordenado
+/*****************************************************************//**
+ * \brief Função que insere uma antena ordenada
+ *
+ * \param inicio - Inicio da lista
+ * \param novo - Antena a inserir
+ *
+ * \return Retorna a lista com a antena inserida
+ *********************************************************************/
 Antena* InsereOrdenado(Antena* inicio, Antena* novo) {
 	//Validações
 	if (novo == NULL) return inicio;
@@ -46,10 +68,18 @@ Antena* InsereOrdenado(Antena* inicio, Antena* novo) {
 	}
 	return inicio;
 }
-
 #pragma endregion
-#pragma region Remove Antena
 
+#pragma region Remove Antena
+/*****************************************************************//**
+ * \brief Função que remove uma antena
+ *
+ * \param inicio - Inicio da lista
+ * \param linha - Linha da matriz
+ * \param coluna - Coluna da matriz
+ *
+ * \return Retorna a lista com a antena removida
+ *********************************************************************/
 Antena* RemoveAntena(Antena* inicio, int linha, int coluna) {
 	if (inicio == NULL) return NULL;			//Lista vazia
 
@@ -73,29 +103,51 @@ Antena* RemoveAntena(Antena* inicio, int linha, int coluna) {
 	}
 	return inicio;
 }
-
 #pragma endregion
-#pragma region Procura Antena
 
+#pragma region Procura Antena
+/*****************************************************************//**
+ * \brief Função que procura uma antena
+ *
+ * \param inicio - Inicio da lista
+ * \param linha - Linha da matriz
+ * \param coluna - Coluna da matriz
+ *
+ * \return Retorna a antena encontrada
+ *********************************************************************/
 Antena* ProcuraAntena(Antena* inicio, int linha, int coluna) {
-	Antena* aux = inicio;
-	while (aux && aux->linha < linha) {//linha v e no dei baixo
+	/*(Antena * aux = inicio;
+	while (aux && aux->linha < linha) {
 		aux = aux->prox;
 	}
 	if (aux && aux->linha == linha){
-		while (aux && aux->coluna < coluna) {//linha v e no dei baixo
+		while (aux && aux->coluna < coluna) {
 			aux = aux->prox;
 		}
 		if (aux && aux->coluna == coluna) {
-			if (aux->frequencia != '.')return aux;	//valor encontrado
+			if (aux->frequencia != '.')return aux;	
 		}
+	}
+	return NULL;*/
+	Antena* aux = inicio;
+	while (aux != NULL) {
+		if (aux->linha == linha && aux->coluna == coluna) {
+			return aux;
+		}
+		aux = aux->prox;
 	}
 	return NULL;
 }
-
 #pragma endregion
-#pragma region Carregar Antenas Do Ficheiro
 
+#pragma region Carregar Antenas Do Ficheiro
+/*****************************************************************//**
+ * \brief Função que carrega as antenas de um ficheiro
+ *
+ * \param nome_ficheiro - Nome do ficheiro
+ *
+ * \return Retorna a lista de antenas
+ *********************************************************************/
 Antena* CarregarAntenasDoFicheiro(const char* nome_ficheiro) { //ver
 	FILE* fp = fopen(nome_ficheiro, "r");
 	if (fp == NULL) {
