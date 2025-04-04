@@ -151,7 +151,7 @@ Antena* ProcuraAntena(Antena* inicio, int linha, int coluna) {
 Antena* CarregarAntenasDoFicheiro(const char* nome_ficheiro) { //ver
 	FILE* fp = fopen(nome_ficheiro, "r");
 	if (fp == NULL) {
-		printf("Erro ao abrir\n");
+		//printf("Erro ao abrir\n");
 		return NULL;
 	}
 
@@ -170,13 +170,8 @@ Antena* CarregarAntenasDoFicheiro(const char* nome_ficheiro) { //ver
 			char c = linha[x];
 			if (c != '.') {
 				Antena* ant = CriaAntena(x, y, c); //rever
-				if (lista == NULL) {
-					lista = ant;
-				}
-				else {
-					ultima->prox = ant;
-				}
-				ultima = ant;
+				lista = InsereOrdenado(lista, ant);
+				
 			}
 		}
 		y++;
