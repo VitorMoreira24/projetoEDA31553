@@ -169,7 +169,7 @@ Antena* CarregarAntenasDoFicheiro(const char* nome_ficheiro) { //ver
 		for (int x = 0; x < comp; x++) {
 			char c = linha[x];
 			if (c != '.') {
-				Antena* ant = CriarAntena(x, y, c);
+				Antena* ant = CriaAntena(x, y, c); //rever
 				if (lista == NULL) {
 					lista = ant;
 				}
