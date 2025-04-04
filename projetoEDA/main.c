@@ -20,7 +20,7 @@ int main() {
     //printf("Matriz com localizações nefastas:\n");
     //ImprimirMatrizComNefastos(lista, 12, 12);
 
-    // Liberar memória
+    // Libertar memória
     while (lista) {
         Antena* temp = lista;
         lista = lista->prox; //erro
