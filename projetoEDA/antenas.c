@@ -185,3 +185,11 @@ Antena* CarregarAntenasDoFicheiro(const char* nome_ficheiro) { //ver
 	return lista;
 }
 #pragma endregion
+
+//ADICIONAR MOSTRAR MATRIZ
+
+//ADICIONAR NEFASTOS2
+
+//MOSTRAR MATRIZ COM NEFASTOS
+
+//LIBERTARNEFASTOS
