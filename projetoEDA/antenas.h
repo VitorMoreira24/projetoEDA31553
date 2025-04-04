@@ -31,4 +31,5 @@ Antena* CriaAntena(char frequencia, int linha, int coluna);
 Antena* InsereOrdenado(Antena* inicio, Antena* novo);
 Antena* RemoveAntena(Antena* inicio, int linha, int coluna);
 Antena* ProcuraAntena(Antena* inicio, int linha, int coluna);
+Antena* CarregarAntenasDoFicheiro(const char* nome_ficheiro);
 //void DestroiListaAntenas(Antena** h);
