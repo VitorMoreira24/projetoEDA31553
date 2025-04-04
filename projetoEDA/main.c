@@ -23,7 +23,7 @@ int main() {
     // Libertar memória
     while (lista) {
         Antena* temp = lista;
-        lista = lista->prox; //erro
+        lista = lista->prox; 
         free(temp);
     }
 
