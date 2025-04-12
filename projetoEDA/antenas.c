@@ -109,7 +109,7 @@ Antena* RemoveAntena(Antena* inicio, int linha, int coluna) {
 /*****************************************************************//**
  * \brief Função que procura uma antena
  *
- * \param inicio - Inicio da lista
+ * \param inicio - Inicio da listaa
  * \param linha - Linha da matriz
  * \param coluna - Coluna da matriz
  *
