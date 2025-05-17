@@ -234,7 +234,7 @@ void mostrarMatrizNefastos(Antena* lista_antenas, nefastos* lista_nefastos) {
 				}
 
 				if (ehnefasto) {
-					printf("# ");
+					printf("# ");teste
 				}
 				else {
 					printf(". ");
