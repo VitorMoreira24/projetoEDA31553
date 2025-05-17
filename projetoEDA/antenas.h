@@ -26,6 +26,19 @@ typedef struct Antena {
     struct Antena* prox;   // Próxima antena
 } Antena;
 
+
+/*****************************************************************//**
+ * \brief Struct que representa nefastos
+ *
+ * \param x - Coordenada x
+ * \param y - Coordenada y
+ * \param prox - Aponta para o próximo nefasto
+ *********************************************************************/
+typedef struct nefastos {
+	int x, y;
+	struct nefastos* prox;
+}nefastos;
+
 // Protótipos das funções no ficheiro antenas.c
 Antena* CriaAntena(char frequencia, int linha, int coluna);
 Antena* InsereOrdenado(Antena* inicio, Antena* novo);

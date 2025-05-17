@@ -139,7 +139,128 @@ Antena* ProcuraAntena(Antena* inicio, int linha, int coluna) {
 	return NULL;
 }
 #pragma endregion
+#pragma region Nefastos
+/**
+ * .
+ * criarEfeitoNefasto
+ * \param x
+ * \param y
+ * \return
+ */
+nefastos* criarEfeitoNefasto(int x, int y) {
+	nefastos* novo = (nefastos*)malloc(sizeof(nefastos));
+	if (novo != NULL) {
+		novo->x = x;
+		novo->y = y;
+		novo->prox = NULL;
+	}
+	return novo;
+}
 
+/**
+ * .
+ * calcularEfeitoNefastoFinal
+ * \param lista
+ * \return
+ */
+nefastos* calcularNefastos(Antena* lista) {
+	nefastos* nefasto = NULL;
+	Antena* atual = lista;
+
+
+	while (atual != NULL) {
+		Antena* comparar = atual->prox;
+
+		while (comparar != NULL) {
+			if (atual->frequencia == comparar->frequencia) {
+
+				int diff_linha = comparar->linha - atual->linha;
+				int diff_coluna = comparar->coluna - atual->coluna;
+
+
+				int nefasto_linha = comparar->linha + diff_linha;
+				int nefasto_coluna = comparar->coluna + diff_coluna;
+
+
+				if (nefasto_linha >= 0 && nefasto_coluna >= 0 && nefasto_linha < MAX_LINHAS && nefasto_coluna < MAX_COLUNAS) {//rever
+					nefastos* novo = criarEfeitoNefasto(nefasto_linha, nefasto_coluna);
+					novo->prox = nefasto;
+					nefasto = novo;
+				}
+
+				nefasto_linha = atual->linha - diff_linha;
+				nefasto_coluna = atual->coluna - diff_coluna;
+
+				if (nefasto_linha >= 0 && nefasto_coluna >= 0 && nefasto_linha < MAX_LINHAS && nefasto_coluna < MAX_COLUNAS) {
+					nefastos* novo2 = criarEfeitoNefasto(nefasto_linha, nefasto_coluna);
+					novo2->prox = nefasto;
+					nefasto = novo2;
+				}
+			}
+			comparar = comparar->prox;
+		}
+		atual = atual->prox;
+	}
+
+	return nefasto;
+}
+
+
+/**
+ * .
+ * mostrarMatrizComNefastos
+ * Exibe a matriz mostrando antenas e pontos nefastos
+ * \param lista_antenas Lista de antenas
+ * \param lista_nefastos Lista de pontos nefastos
+ */
+void mostrarMatrizNefastos(Antena* lista_antenas, nefastos* lista_nefastos) {
+	printf("\nMatriz com Efeitos Nefastos (%dx%d):\n", MAX_LINHAS, MAX_COLUNAS); //rever
+	for (int l = 0; l < MAX_LINHAS; l++) {
+		for (int c = 0; c < MAX_COLUNAS; c++) {
+			Antena* ant = ProcuraAntena(lista_antenas, l, c);
+
+			if (ant != NULL) {
+				printf("%c ", ant->frequencia);
+			}
+			else {
+				nefastos* n = lista_nefastos;
+				int ehnefasto = 0;
+
+				while (n != NULL && ehnefasto == 0) {
+					if (n->x == l && n->y == c) {
+						ehnefasto = 1;
+					}
+					n = n->prox;
+				}
+
+				if (ehnefasto) {
+					printf("# ");
+				}
+				else {
+					printf(". ");
+				}
+			}
+		}
+		printf("\n");
+	}
+}
+
+/**
+ * .
+ * libertarListaNefasto
+ * Função para libertar a memoria
+ * \param lista
+ */
+void libertarListaNefasto(nefastos* lnefasto) {
+	nefastos* atual = lnefasto;
+
+	while (atual != NULL) {
+		nefastos* proximo = atual->prox;
+		free(atual);
+		atual = proximo;
+	}
+}
+#pragma endregion
 #pragma region Carregar Antenas Do Ficheiro
 /*****************************************************************//**
  * \brief Função que carrega as antenas de um ficheiro
