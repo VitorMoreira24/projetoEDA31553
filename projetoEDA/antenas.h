@@ -39,10 +39,18 @@ typedef struct nefastos {
 	struct nefastos* prox;
 }nefastos;
 
+extern int MAX_COLUNAS;
+extern int MAX_LINHAS;
+
 // Protótipos das funções no ficheiro antenas.c
 Antena* CriaAntena(char frequencia, int linha, int coluna);
 Antena* InsereOrdenado(Antena* inicio, Antena* novo);
 Antena* RemoveAntena(Antena* inicio, int linha, int coluna);
 Antena* ProcuraAntena(Antena* inicio, int linha, int coluna);
 Antena* CarregarAntenasDoFicheiro(const char* nome_ficheiro);
+nefastos* criarEfeitoNefasto(int x, int y);
+nefastos* calcularNefastos(Antena* lista);
+void mostrarMatrizAntenas(Antena* lista);
+void mostrarMatrizNefastos(Antena* lista_antenas, nefastos* lista_nefastos);
+void libertarListaNefasto(nefastos* lnefasto);
 //void DestroiListaAntenas(Antena** h);
