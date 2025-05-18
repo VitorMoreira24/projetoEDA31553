@@ -16,7 +16,7 @@ Laboratórios de Informática
 
 ## Download do Projeto
 
-Para aceder ao downlaod da fase 1 e 2, a partir do repositório GITHUB realizar o download do ficheiro "projetoEDA31553.zip"
+Para aceder ao downlaod da fase 1 e 2, a partir do repositório GITHUB realizar o download do ficheiro "projetoEDA_31553.zip"
 
 ## Compilação do Programa
 
